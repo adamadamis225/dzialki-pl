@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dzialki-pl"
+version = "0.1.0"
+description = "Pobieranie geometrii działek z ULDK i liczenie ich wymiarów"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["requests>=2.31", "shapely>=2.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+dzialki = "dzialki.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
